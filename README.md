@@ -9,7 +9,7 @@ Collect data from various sources (e.g. databases, APIs of 3rd party application
 
 - [Meltano](https://meltano.com/): open-source Extract and Load (EL) tool, by gitlab. Low-code solution, but there is also a UI. Uses [Singer](https://www.singer.io/) specification (an open standard with many connectors already available)
 - [Airbyte](https://airbyte.io/): similar to Meltano, open-source EL tool with high traction, but no code solution. Also based on Singer, but uses a modified version -> custom connectors can be made (quickly?) with their [Connector Development Kit](https://airbyte.io/connector-development-kit) (CDK)
-- ~~Talend Open Studio: only runs on a local installation (Windows 10/MacOS)~~
+- [Talend Open Studio](https://www.talend.com/fr/products/talend-open-studio/): French ETL tool, nice graphical user interface, but open-source version  only runs on a local installation (Windows 10/MacOS) ?
 - cloud-based, not open-source: Fivetran, Stitch (a product of Talend), Segment
 
 **Data storage** (warehouse/lakehouse)
@@ -118,7 +118,7 @@ Data Analytics/BI-oriented
 - [Traditional data warehouse systems](https://www.ibm.com/cloud/learn/data-warehouse): OLAP vs OLTP, ETL tools (Extract Transform Load), dimensional modelling (star schema, snowflake schema), data mart, data lake
 - The "Modern Data Stack": shift to the cloud (cost effective and easily scalable), more flexibility with ELT instead of ETL, modularity (avoid vendor lock-in), more accessible data exploration
   - [The Modern Data Stack](https://www.metabase.com/blog/The-Modern-Data-Stack/index.html) by metabase
-  - [ELT and the modern data stack](ELThttps://docs.dataform.co/introduction/modern-data-stack (store raw data in the warehouse, and transform into prepared data after) rather than ETL) by dataform
+  - [ELT and the modern data stack](https://docs.dataform.co/introduction/modern-data-stack), ELT (store raw data in the warehouse, and transform into prepared data after) rather than ETL, by dataform
   - [Open source data stack](https://www.opensourcedatastack.com/), an example of a fully open-source stack, with demos of some tools (meltano, dbt, superset, dagster)
 - [ETL history and benchmark](https://www.castordoc.com/blog/etl-benchmark-for-mid-market-companies) by castor
   - ETL 1st gen (1990s): transform data according to business needs before storing in the central data warehouse, due to expensive storage/computation. Requires constant maintenance by data engineers when source formats or business needs change

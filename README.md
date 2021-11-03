@@ -67,6 +67,7 @@ Aka data visualisation or business intelligence (BI), explore and find insights 
 - [Apache Superset](https://superset.apache.org/docs/intro): 40k stars [repo](https://github.com/apache/superset), fully open source, no-code viz builder, looks a bit less polish/user friendly, but many options and visualisations possible. [Video demo](https://www.youtube.com/watch?v=hktHz89Zco4)
 - [metabase](https://github.com/metabase/metabase): 26k stars, open-source version, can be self-hosted, easy to use even without knowing SQL, ~15 visualisations
 - [redash](https://github.com/getredash/redash): 20k stars, fully open source (no enterprise version), but requires SQL and less options
+- [Pentaho Community Edition](https://sourceforge.net/projects/pentaho/): end-to-end platform with both ETL (Pentaho Data Integration) and OLAP queries/dashboards (Pentaho Business Analytics). Looks old-school, and beware of the paid [Enterprise version](https://www.hitachivantara.com/en-us/pdfd/brochure/leverage-open-source-benefits-with-assurance-of-hitachi-overview.pdf) they seem to push hard
 - Not open-source: Tableau, [Mode](https://mode.com/) (a bit targeted for data scientists: R/python notebooks), [Looker](https://looker.com/) (by Google)
 
 **Data orchestration tools**

@@ -7,9 +7,9 @@ A list of (mostly) open-source tools and resources for data engineering.
 
 Collect data from various sources (e.g. databases, APIs of 3rd party applications, etc) and store it. For each external interface/internal data storage solution, *connectors* can be developed to move the data.
 
-- [Meltano](https://meltano.com/): open-source Extract and Load (EL) tool, by gitlab. Low-code solution, but there is also a UI. Uses [Singer](https://www.singer.io/) specification (an open standard with many connectors already available)
-- [Airbyte](https://airbyte.io/): similar to Meltano, open-source EL tool with high traction, but no code solution. Also based on Singer, but uses a modified version -> custom connectors can be made (quickly?) with their [Connector Development Kit](https://airbyte.io/connector-development-kit) (CDK)
-- [Talend Open Studio](https://www.talend.com/fr/products/talend-open-studio/): French ETL tool, nice graphical user interface, but open-source version  only runs on a local installation (Windows 10/MacOS) ?
+- [Meltano](https://meltano.com/): open-source Extract and Load (EL) tool, by gitlab. CLI solution, with a UI for monitoring and managing jobs. Uses [Singer](https://www.singer.io/) specification (an open standard with many connectors already available, aka *taps*)
+- [Airbyte](https://airbyte.io/): similar to Meltano, open-source EL tool with high traction. Also based on Singer, but uses a modified version -> custom connectors can be made relatively quickly with their [Connector Development Kit](https://airbyte.io/connector-development-kit) (CDK). Compared ot meltano, more UI-based rather than CLI-based for job creation/management/deployment.
+- [Talend Open Studio](https://www.talend.com/fr/products/talend-open-studio/): French ETL tool, nice graphical user interface. Note: open-source version  only runs on a local installation (Windows 10/MacOS) ?
 - cloud-based, not open-source: Fivetran, Stitch (a product of Talend), Segment
 
 **Data storage** (warehouse/lakehouse)
@@ -46,17 +46,11 @@ All the relevant business data can be stored in a data warehouse, data lake, or 
   - Google BigQuery
   - Panoply: all in one tool, data warehouse + ETL
 
-  > Cloud brings "cost-effective" scaling, flexibility and cheaper storage 
-  >
-  > /!\ pushing for storing large raw data (ELT) instead of traditional datawarehouses (ETL), makes sense for them, to increase compute costs?
-  >
-  > Though they let you not worry about db administration, scaling up if needed, setting indexes for performance, worrying about data types, etc
-
 **Data transformation and modeling**
 
 Clean, standardize, and transform data for analysis (e.g. remove empty rows, correct data types, join tables).
 
-- [dbt](https://github.com/dbt-labs/dbt) (data build tool): transform data (T part of ETL) with a project of sql files (-> tests, version control, etc). dbt cloud has a price, but dbt Core is the free, open source, on premise version
+- [dbt](https://github.com/dbt-labs/dbt) (data build tool): transform data (T part of ETL) with a project of sql files (-> tests, version control, etc). dbt cloud has a price, but dbt Core is the free, open source, on premise version. Airbyte and Meltano both integrate well with dbt, and rely on it for the Transform part.
 - [dataform](https://github.com/dataform-co/dataform): modern data modelling and transformation as well, but open source version is CLI only (web interface is their paid product)
 - Other data processing tools (hybrid or streaming, not just batch processing)
 
@@ -67,7 +61,7 @@ Aka data visualisation or business intelligence (BI), explore and find insights 
 - [Apache Superset](https://superset.apache.org/docs/intro): 40k stars [repo](https://github.com/apache/superset), fully open source, no-code viz builder, looks a bit less polish/user friendly, but many options and visualisations possible. [Video demo](https://www.youtube.com/watch?v=hktHz89Zco4)
 - [metabase](https://github.com/metabase/metabase): 26k stars, open-source version, can be self-hosted, easy to use even without knowing SQL, ~15 visualisations
 - [redash](https://github.com/getredash/redash): 20k stars, fully open source (no enterprise version), but requires SQL and less options
-- [Pentaho Community Edition](https://sourceforge.net/projects/pentaho/): end-to-end platform with both ETL (Pentaho Data Integration, aka [Pentaho Kettle](https://github.com/pentaho/pentaho-kettle) ~5k stars) and OLAP queries/dashboards (Pentaho Business Analytics or [Pentaho Mondrian](https://github.com/pentaho/mondrian)? ~1k stars). Looks old-school, there is also a paid [Enterprise version](https://www.hitachivantara.com/en-us/pdfd/brochure/leverage-open-source-benefits-with-assurance-of-hitachi-overview.pdf)
+- [Pentaho Community Edition](https://sourceforge.net/projects/pentaho/): end-to-end platform with both ETL (Pentaho Data Integration, aka [Pentaho Kettle](https://github.com/pentaho/pentaho-kettle) ~5k stars) and OLAP queries/dashboards (Pentaho Business Analytics or [Pentaho Mondrian](https://github.com/pentaho/mondrian)? ~1k stars). There is a paid [Enterprise version](https://www.hitachivantara.com/en-us/pdfd/brochure/leverage-open-source-benefits-with-assurance-of-hitachi-overview.pdf)
 - Not open-source: Tableau, [Mode](https://mode.com/) (a bit targeted for data scientists: R/python notebooks), [Looker](https://looker.com/) (by Google)
 
 **Data orchestration tools**
